@@ -15,6 +15,8 @@ public class Point {
 	}
 
 	public void setX(double x) {
+		if(x<0)
+			x=0;
 		this.x = x;
 	}
 
@@ -23,6 +25,8 @@ public class Point {
 	}
 
 	public void setY(double y) {
+		if(y<0)
+			y=0;
 		this.y = y;
 	}
 }
