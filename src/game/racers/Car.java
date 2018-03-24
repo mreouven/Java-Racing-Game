@@ -17,7 +17,9 @@ public class Car {
 		return currentLocation;
 		
 	}
-	
+	public void initRace(LandArena arena, Point start, Point finish) {
+		
+	}
 	
 
 	public Car(String name, double maxSpeed, double acceleration) {
