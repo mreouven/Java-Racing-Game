@@ -1,11 +1,13 @@
 package game.racers;
 
+import game.arenas.LandArena;
 import utilities.Point;
 
 public class Car {
 	String name;
 	Point currentLocation;
 	Point finish;
+	LandArena arena;
 	double maxSpeed;
 	double acceleration;
 	double currentSpeed;

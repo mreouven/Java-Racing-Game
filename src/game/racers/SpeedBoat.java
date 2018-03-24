@@ -1,22 +1,29 @@
 package game.racers;
 
+import game.arenas.LandArena;
+import game.arenas.NavalArena;
 import utilities.Point;
 
 public class SpeedBoat {
 	String name;
 	Point currentLocation;
 	Point finish;
+	NavalArena arena;
 	double maxSpeed;
 	double acceleration;
 	double currentSpeed;
-	
+
 	public Point move(double friction) {
-				
+
 		return currentLocation;
-		
+
 	}
-	
-	
+
+	public void initRace(NavalArena arena, Point start, Point finish) {
+
+	}
+
+
 
 	public SpeedBoat(String name, double maxSpeed, double acceleration) {
 		super();

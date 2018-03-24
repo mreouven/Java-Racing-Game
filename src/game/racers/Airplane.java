@@ -1,22 +1,30 @@
 package game.racers;
+import game.arenas.AerialArena;
+import game.arenas.LandArena;
 import utilities.Point;
 
 public class Airplane {
 	String name;
 	Point currentLocation;
 	Point finish;
+	AerialArena arena;
 	double maxSpeed;
 	double acceleration;
 	double currentSpeed;
-	
-	public Point move(double friction) {
-				
-		return currentLocation;
-		
-	}
-	
-	
 
+	public Point move(double friction) {
+
+		return currentLocation;
+
+	}
+
+	public void initRace(AerialArena arena, Point start, Point finish) {
+
+	}
+
+
+	
+	
 	public Airplane(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;

@@ -1,22 +1,29 @@
 package game.racers;
 
+import game.arenas.LandArena;
 import utilities.Point;
 
 public class Horse {
 	String name;
 	Point currentLocation;
 	Point finish;
+	LandArena arena;
 	double maxSpeed;
 	double acceleration;
 	double currentSpeed;
-	
+
 	public Point move(double friction) {
-				
+
 		return currentLocation;
-		
+
 	}
-	
-	
+	public void initRace(LandArena arena, Point start, Point finish) {
+
+	}
+
+
+
+
 
 	public Horse(String name, double maxSpeed, double acceleration) {
 		super();
