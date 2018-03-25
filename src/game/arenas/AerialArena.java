@@ -20,19 +20,25 @@ public class AerialArena {
 	private final static double FRICTION = 0.4;
 	private final static int MAX_RACERS = 6;
 	
-	AerialArena(Point start,Point Finish){
-		
+	
+	public AerialArena(Point start, Point finish) {
+		super();
+		this.start = start;
+		this.finish = finish;
 	}
-	
-	
+
 	public boolean addAirplane(Airplane newRacer) {
-		
-		return true;
+		if(newRacer != null) {
+			airplanes.add(newRacer);
+			return true;}
+		return false;
 	}
 
 	public boolean addHelicopter(Helicopter newRacer) {
-		
-		return true;
+		if(newRacer != null) {
+			helicopters.add(newRacer);
+			return true;}
+		return false;
 	}
 	public void initRace() {
 		

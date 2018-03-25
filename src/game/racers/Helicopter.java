@@ -1,7 +1,6 @@
 package game.racers;
 
 import game.arenas.AerialArena;
-import game.arenas.LandArena;
 import utilities.Point;
 
 public class Helicopter {
