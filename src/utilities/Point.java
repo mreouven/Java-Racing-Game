@@ -1,5 +1,12 @@
 package utilities;
 
+/**
+ * 
+ * @author Emeth Genah
+ * @author Reouven Mimoun
+ * 
+ * 
+ */
 public class Point {
 	private double x;
 	private double y;
