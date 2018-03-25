@@ -5,6 +5,33 @@ import game.racers.RowBoat;
 import game.racers.SpeedBoat;
 import utilities.Point;
 
+/**
+ * <b>LandArena cest la classe qui repressente les arennes du parterre.</b>
+ * <p>
+ * Elle est caracteriser par les fonction suivante :
+ * <ul>
+ * <li>Start and Final point.</li>
+ * <li>List of RowBoat and SpeedBoat.</li>
+ * <li>List of finished participant.</li>
+ * </ul>
+ * </p>
+ * <p>
+ * Constant description of class:
+ * <ul>
+ * <li>Friction force.</li>
+ * <li>The maximum of participant accept.</li>
+ * </ul>
+ * 
+ * </p>
+ * 
+ * @see LandArena
+ * @see AerialArena
+ * 
+ * @author Reouven Mimoun
+ * @author Emeth Genah
+ * @version 1.0
+ */
+
 public class NavalArena {
 
 

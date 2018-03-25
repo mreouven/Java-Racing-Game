@@ -5,9 +5,35 @@ import game.racers.Car;
 import game.racers.Horse;
 import utilities.Point;
 
+/**
+ * <b>LandArena cest la classe qui repressente les arennes du parterre.</b>
+ * <p>
+ * Elle est caracteriser par les fonction suivante :
+ * <ul>
+ * <li>Start and Final point.</li>
+ * <li>List of car and horse.</li>
+ * <li>List of finished participant.</li>
+ * </ul>
+ * </p>
+ * <p>
+ * Constant description of class:
+ * <ul>
+ * <li>Friction force.</li>
+ * <li>The maximum of participant accept.</li>
+ * </ul>
+ * 
+ * </p>
+ * 
+ * @see NavalArena
+ * @see AerialArena
+ * 
+ * @author Reouven Mimoun
+ * @author Emeth Genah
+ * @version 1.0
+ */
 public class LandArena {
 	
-	
+
 	private Point start;
 	private Point finish;
 	
