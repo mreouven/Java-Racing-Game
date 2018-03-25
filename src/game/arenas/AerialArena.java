@@ -28,32 +28,69 @@ public class AerialArena {
 	}
 
 	public boolean addAirplane(Airplane newRacer) {
-		if(newRacer != null) {
-			airplanes.add(newRacer);
-			return true;
+		if((airplanes.size()+ helicopters.size())<MAX_RACERS){
+			if(newRacer != null) {
+				airplanes.add(newRacer);
+				return true;
 			}
+		}
 		return false;
+	}
+	
+	public boolean addHelicopter(Helicopter newRacer) {
+		if((airplanes.size()+ helicopters.size())<MAX_RACERS){
+			if(newRacer != null) {
+				helicopters.add(newRacer);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public int crossFinishLine(Airplane racer) {
+		finished.add(racer);
+		return (finished.indexOf(racer) + 1);
+	}
+	
+	public int crossFinishLine(Helicopter racer) {
+		finished.add(racer);
+		return (finished.indexOf(racer) + 1);
+	}
+	
+	public void initRace() {
+		for (int i = 0; i < helicopters.size(); i++)
+			helicopters.get(i).initRace(this, start, finish);
+		for (int i = 0; i < airplanes.size(); i++)
+			airplanes.get(i).initRace(this, start, finish);
 	}
 
-	public boolean addHelicopter(Helicopter newRacer) {
-		if(newRacer != null) {
-			helicopters.add(newRacer);
-			return true;
-			}
-		return false;
-	}
-	public void initRace() {
-		
-	}
 	
+
 	public void playTurn() {
-		
+		if(hasActiveRacers()) {
+			Point temp=null;
+			for (int i = 0; i < this.airplanes.size(); i++) {
+				temp=airplanes.get(i).move(FRICTION);	
+				if(temp.getX()>=finish.getX()) {
+					crossFinishLine(airplanes.get(i));
+					airplanes.remove(i);
+				}
+			}
+			for (int i = 0; i < this.helicopters.size(); i++) {
+				temp=helicopters.get(i).move(FRICTION);	
+				if(temp.getX()>=finish.getX()) {
+					crossFinishLine(helicopters.get(i));
+					helicopters.remove(i);
+				}
+			}
+		}
 	}
-	
+
 	public boolean hasActiveRacers() {
-		
+		if(helicopters.size()!=0||airplanes.size()!=0)
+			return true;
 		return false;
-		
+
 	}
 	
 }

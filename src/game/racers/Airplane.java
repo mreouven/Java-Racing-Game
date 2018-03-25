@@ -1,6 +1,5 @@
 package game.racers;
 import game.arenas.AerialArena;
-import game.arenas.LandArena;
 import utilities.Point;
 
 public class Airplane {
@@ -13,17 +12,26 @@ public class Airplane {
 	double currentSpeed;
 
 	public Point move(double friction) {
-
+		if(maxSpeed<currentSpeed+acceleration*friction)
+			currentSpeed+=acceleration*friction;
+		else {
+			currentSpeed=maxSpeed;
+		}
+		currentLocation.setX(currentLocation.getX()+currentSpeed);
 		return currentLocation;
 
 	}
 
 	public void initRace(AerialArena arena, Point start, Point finish) {
-			this.finish=finish;
+		this.arena=arena;
+		this.finish=finish;
+		//deplace le joueur au point de departs
+		this.currentLocation.setX(start.getX());
+		
 	}
 
 
-	
+
 	//TODO verifier valeur correct
 	public Airplane(String name, double maxSpeed, double acceleration) {
 		super();

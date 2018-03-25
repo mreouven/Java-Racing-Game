@@ -1,7 +1,5 @@
 package game.racers;
 
-import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
-
 import game.arenas.NavalArena;
 import utilities.Point;
 
@@ -15,19 +13,21 @@ public class RowBoat {
 	double currentSpeed;
 
 	public Point move(double friction) {
+		if(maxSpeed<currentSpeed+acceleration*friction)
+			currentSpeed+=acceleration*friction;
+		else {
+			currentSpeed=maxSpeed;
+		}
+		currentLocation.setX(currentLocation.getX()+currentSpeed);
 		return currentLocation;
 	}
 
 	public void initRace(NavalArena arena, Point start, Point finish) {
-		if(arena!=null) {
-			this.arena=arena;
-		}
-		if(finish!=null) {
-			this.finish=finish;
-		}
-		if(start != null) {
-			this.currentLocation=start;
-		}
+		this.arena=arena;
+		this.finish=finish;
+		//deplace le joueur au point de departs
+		this.currentLocation.setX(start.getX());
+		
 	}
 
 
@@ -37,7 +37,13 @@ public class RowBoat {
 		//TODO verifier l'acceleration max
 		super();
 		this.name = name;
+		if(maxSpeed>75) {
+			maxSpeed=75;
+		}
 		this.maxSpeed = maxSpeed;
+		if(acceleration>10) {
+			acceleration=10;
+		}
 		this.acceleration = acceleration;
 	}
 

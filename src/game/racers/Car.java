@@ -13,11 +13,20 @@ public class Car {
 	double currentSpeed;
 	
 	public Point move(double friction) {
-				
+		if(maxSpeed<currentSpeed+acceleration*friction)
+			currentSpeed+=acceleration*friction;
+		else {
+			currentSpeed=maxSpeed;
+		}
+		currentLocation.setX(currentLocation.getX()+currentSpeed);
 		return currentLocation;
 		
 	}
 	public void initRace(LandArena arena, Point start, Point finish) {
+		this.arena=arena;
+		this.finish=finish;
+		//deplace le joueur au point de departs
+		this.currentLocation.setX(start.getX());
 		
 	}
 	
@@ -25,7 +34,13 @@ public class Car {
 	public Car(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;
+		if(maxSpeed>120) {
+			maxSpeed=120;
+		}
 		this.maxSpeed = maxSpeed;
+		if(acceleration>12) {
+			acceleration=12;
+		}
 		this.acceleration = acceleration;
 	}
 
