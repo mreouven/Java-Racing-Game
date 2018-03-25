@@ -42,8 +42,7 @@ public class RowBoat {
 	}
 
 	public RowBoat(String name) {
-		super();
-		this.name = name;
+		this(name, 75, 10);
 	}
 
 

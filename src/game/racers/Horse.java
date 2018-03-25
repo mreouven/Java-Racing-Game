@@ -33,8 +33,7 @@ public class Horse {
 	}
 
 	public Horse(String name) {
-		super();
-		this.name = name;
+		this(name, 80, 7);
 	}
 
 

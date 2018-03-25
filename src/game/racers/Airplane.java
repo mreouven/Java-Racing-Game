@@ -19,22 +19,27 @@ public class Airplane {
 	}
 
 	public void initRace(AerialArena arena, Point start, Point finish) {
-
+			this.finish=finish;
 	}
 
 
 	
-	
+	//TODO verifier valeur correct
 	public Airplane(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;
+		if(maxSpeed>220) {
+			maxSpeed=220;
+		}
 		this.maxSpeed = maxSpeed;
+		if(acceleration>20) {
+			acceleration=20;
+		}
 		this.acceleration = acceleration;
 	}
 
 	public Airplane(String name) {
-		super();
-		this.name = name;
+		this(name, 220, 20);
 	}
 
 

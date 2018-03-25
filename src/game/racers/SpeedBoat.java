@@ -33,8 +33,7 @@ public class SpeedBoat {
 	}
 
 	public SpeedBoat(String name) {
-		super();
-		this.name = name;
+		this(name, 170, 5);
 	}
 
 

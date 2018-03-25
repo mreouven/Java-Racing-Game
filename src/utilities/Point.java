@@ -9,7 +9,7 @@ public class Point {
 		this.setY(y);
 		
 	}
-
+	//TODO verifier que les entree sont correct
 	public double getX() {
 		return x;
 	}

@@ -30,8 +30,7 @@ public class Car {
 	}
 
 	public Car(String name) {
-		super();
-		this.name = name;
+		this(name, 120, 12);
 	}
 
 

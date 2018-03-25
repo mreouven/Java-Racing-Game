@@ -9,7 +9,6 @@ import utilities.Point;
 public class AerialArena {
 	
 	
-	
 	private Point start;
 	private Point finish;
 	
@@ -18,9 +17,10 @@ public class AerialArena {
 	private ArrayList<Object> finished;
 	
 	private final static double FRICTION = 0.4;
+	//TODO verifier si MAX_RACERS final??
 	private final static int MAX_RACERS = 6;
 	
-	
+	//Constructor
 	public AerialArena(Point start, Point finish) {
 		super();
 		this.start = start;
@@ -30,14 +30,16 @@ public class AerialArena {
 	public boolean addAirplane(Airplane newRacer) {
 		if(newRacer != null) {
 			airplanes.add(newRacer);
-			return true;}
+			return true;
+			}
 		return false;
 	}
 
 	public boolean addHelicopter(Helicopter newRacer) {
 		if(newRacer != null) {
 			helicopters.add(newRacer);
-			return true;}
+			return true;
+			}
 		return false;
 	}
 	public void initRace() {

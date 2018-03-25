@@ -32,8 +32,7 @@ public class Helicopter {
 	}
 
 	public Helicopter(String name) {
-		super();
-		this.name = name;
+		this(name, 150, 10);
 	}
 
 

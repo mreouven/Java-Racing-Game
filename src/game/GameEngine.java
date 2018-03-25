@@ -1,12 +1,7 @@
 package game;
 
 import game.arenas.*;
-import game.racers.Airplane;
-import game.racers.Car;
-import game.racers.Helicopter;
-import game.racers.Horse;
-import game.racers.RowBoat;
-import game.racers.SpeedBoat;
+import game.racers.*;
 
 public class GameEngine {
 	private AerialArena airArena;
@@ -15,6 +10,7 @@ public class GameEngine {
 	private ArenaType activeAerna;
 	private static GameEngine instance;
 
+	//TODO constructeur de la classe GameEngine
 
 	public static synchronized GameEngine getInstance()
 	{
@@ -26,6 +22,7 @@ public class GameEngine {
 	}
 
 	public boolean setArena(Object arena) {
+		//TODO verifier que les autres doit etres null
 		if (arena==null) {
 			return false;
 		}
