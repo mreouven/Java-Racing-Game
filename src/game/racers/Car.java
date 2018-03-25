@@ -44,7 +44,6 @@ public class Car {
 		this.acceleration = acceleration;
 		currentLocation=new Point(0,0);
 	}
-
 	public Car(String name) {
 		this(name, 120, 12);
 	}
