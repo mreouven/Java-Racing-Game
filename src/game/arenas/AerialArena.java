@@ -25,6 +25,9 @@ public class AerialArena {
 		super();
 		this.start = start;
 		this.finish = finish;
+		airplanes=new ArrayList<>();
+		helicopters=new ArrayList<>();
+		finished=new ArrayList<>();
 	}
 
 	public boolean addAirplane(Airplane newRacer) {
@@ -37,6 +40,10 @@ public class AerialArena {
 		return false;
 	}
 	
+	public ArrayList<Object> getFinished() {
+		return finished;
+	}
+
 	public boolean addHelicopter(Helicopter newRacer) {
 		if((airplanes.size()+ helicopters.size())<MAX_RACERS){
 			if(newRacer != null) {

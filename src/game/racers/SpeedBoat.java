@@ -45,12 +45,17 @@ public class SpeedBoat {
 			acceleration=5;
 		}
 		this.acceleration = acceleration;
+		currentLocation=new Point(0,0);
 	}
 
 	public SpeedBoat(String name) {
 		this(name, 170, 5);
 	}
 
+	@Override
+	public String toString() {
+		return "SpeedBoat " + name +" (" + maxSpeed + ", " + acceleration + ")";
+	}
 
 	public String getName() {
 		return name;

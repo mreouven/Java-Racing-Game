@@ -90,4 +90,8 @@ public class NavalArena {
 
 	}
 
+	public ArrayList<Object> getFinished() {
+		return finished;
+	}
+
 }

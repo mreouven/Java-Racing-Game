@@ -45,6 +45,7 @@ public class Horse {
 			acceleration=7;
 		}
 		this.acceleration = acceleration;
+		currentLocation=new Point(0,0);
 	}
 
 	public Horse(String name) {
@@ -52,6 +53,11 @@ public class Horse {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Horse " + name +" (" + maxSpeed + ", " + acceleration + ")";
+	}
+	
 	public String getName() {
 		return name;
 	}

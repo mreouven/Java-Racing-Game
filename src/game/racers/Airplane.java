@@ -3,6 +3,9 @@ import game.arenas.AerialArena;
 import utilities.Point;
 
 public class Airplane {
+
+
+
 	String name;
 	Point currentLocation;
 	Point finish;
@@ -44,13 +47,18 @@ public class Airplane {
 			acceleration=20;
 		}
 		this.acceleration = acceleration;
+		currentLocation=new Point(0,0);
 	}
 
 	public Airplane(String name) {
 		this(name, 220, 20);
 	}
 
-
+	@Override
+	public String toString() {
+		return "Airplane " + name +" (" + maxSpeed + ", " + acceleration + ")";
+	}
+	
 	public String getName() {
 		return name;
 	}

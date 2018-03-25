@@ -42,13 +42,18 @@ public class Car {
 			acceleration=12;
 		}
 		this.acceleration = acceleration;
+		currentLocation=new Point(0,0);
 	}
 
 	public Car(String name) {
 		this(name, 120, 12);
 	}
 
-
+	@Override
+	public String toString() {
+		return "Car " + name +" (" + maxSpeed + ", " + acceleration + ")";
+	}
+	
 	public String getName() {
 		return name;
 	}

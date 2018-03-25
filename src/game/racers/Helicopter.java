@@ -44,13 +44,18 @@ public class Helicopter {
 			acceleration=10;
 		}
 		this.acceleration = acceleration;
+		currentLocation=new Point(0,0);
 	}
 
 	public Helicopter(String name) {
 		this(name, 150, 10);
 	}
 
-
+	@Override
+	public String toString() {
+		return "Helicopter " + name +" (" + maxSpeed + ", " + acceleration + ")";
+	}
+	
 	public String getName() {
 		return name;
 	}

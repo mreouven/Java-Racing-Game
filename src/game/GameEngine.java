@@ -1,5 +1,7 @@
 package game;
 
+import java.util.ArrayList;
+
 import game.arenas.*;
 import game.racers.*;
 
@@ -86,7 +88,7 @@ public class GameEngine {
 		case LANDARENA:{
 			if (newRacer instanceof Horse) {
 				if(landArena.addHorse((Horse) newRacer))
-				return true;
+					return true;
 			}
 			if (newRacer instanceof Car) {
 				if(landArena.addCar((Car) newRacer))
@@ -98,7 +100,65 @@ public class GameEngine {
 		}
 		return false;
 	}
-	
-	
+
+	public void initRace() {
+		switch (this.activeAerna) {
+		case AERIALARENA:{
+			airArena.initRace();
+			break;
+		}
+		case NEVALARENA:{
+			navalArena.initRace();
+			break;
+		}
+		case LANDARENA:{
+			landArena.initRace();
+			break;
+		}
+		default:
+			System.out.println("error active type");
+			break;
+		}
+	}
+	public void startRace() {
+
+		switch (this.activeAerna) {
+		case AERIALARENA:{
+			while(airArena.hasActiveRacers())
+				airArena.playTurn();
+			ArrayList<Object> finished=airArena.getFinished();
+			for (int i = 0; i < finished.size(); i++) {
+				System.out.println("#"+(i+1) +" "+finished.get(i));
+			}
+			break;
+			
+		}
+		case NEVALARENA:{
+			while(navalArena.hasActiveRacers())
+				navalArena.playTurn();
+			ArrayList<Object> finished=navalArena.getFinished();
+			for (int i = 0; i < finished.size(); i++) {
+				System.out.println("#"+(i+1) +" "+finished.get(i));
+			}
+			break;
+		}
+		case LANDARENA:{
+			while(landArena.hasActiveRacers())
+				landArena.playTurn();
+			ArrayList<Object> finished=landArena.getFinished();
+			for (int i = 0; i < finished.size(); i++) {
+				System.out.println("#"+(i+1) +" "+finished.get(i));
+			}
+			break;
+		}
+		default:
+			System.out.println("error active type");
+			break;
+		}
+
+	}
+
 
 }
+
+

@@ -24,6 +24,10 @@ public class LandArena {
 		this.finish = finish;
 	}
 
+	public ArrayList<Object> getFinished() {
+		return finished;
+	}
+
 	public boolean addHorse(Horse newRacer) {
 		if((horses.size()+ cars.size())<MAX_RACERS){
 			if(newRacer != null) {

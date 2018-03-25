@@ -45,12 +45,17 @@ public class RowBoat {
 			acceleration=10;
 		}
 		this.acceleration = acceleration;
+		currentLocation=new Point(0,0);
 	}
 
 	public RowBoat(String name) {
 		this(name, 75, 10);
 	}
-
+	
+	@Override
+	public String toString() {
+		return "RowBoat " + name +" (" + maxSpeed + ", " + acceleration + ")";
+	}
 
 	public String getName() {
 		return name;
