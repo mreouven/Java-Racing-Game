@@ -3,17 +3,45 @@ import game.arenas.AerialArena;
 import utilities.Point;
 
 public class Airplane {
-
-
-
+	/**
+	 * The name is String Type and can't be modified.
+	 * 
+	 * @see Airplane#Airplane(String, double, double)
+	 * @see Airplane#Airplane(String)
+	 * @see Airplane#toString()
+	 * @see Airplane#getName()
+	 * @see Airplane#setName(String)
+	 */
 	String name;
+	
+	/**
+	 * The current Location of the airplane in the game.
+	 * 
+	 * @see Airplane#move(double)
+	 * @see Airplane#initRace(AerialArena, Point, Point)
+	 * @see Airplane#Airplane(String)
+	 * @see Airplane#Airplane(String, double, double)
+	 */
 	Point currentLocation;
+	
+	/**
+	 * The finish of type Point is the end line of the game.
+	 * 
+	 * @see Airplane#initRace(AerialArena, Point, Point)
+	 */
 	Point finish;
 	AerialArena arena;
 	double maxSpeed;
 	double acceleration;
 	double currentSpeed;
-
+	
+	/**
+	 * 
+	 * @param friction
+	 * @return currenLocation
+	 * 	return the current location.
+	 * @see Point#getX()
+	 */
 	public Point move(double friction) {
 		if(maxSpeed<currentSpeed+acceleration*friction)
 			currentSpeed+=acceleration*friction;
@@ -24,7 +52,16 @@ public class Airplane {
 		return currentLocation;
 
 	}
-
+	
+	/**
+	 * 
+	 * @param arena
+	 * 	Sent the instance of the arena we will play in this game.
+	 * @param start
+	 * 	Sent the start Point of the game.
+	 * @param finish
+	 * 	Sent the finish Point which is the end line of the game.
+	 */
 	public void initRace(AerialArena arena, Point start, Point finish) {
 		this.arena=arena;
 		this.finish=finish;
