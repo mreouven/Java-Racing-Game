@@ -97,7 +97,7 @@ public class Airplane {
 
 	@Override
 	public String toString() {
-		return "Airplane "+ currentLocation + name +" (" + maxSpeed + ", " + acceleration + ")";
+		return "Airplane " + name +" (" + maxSpeed + ", " + acceleration + ")";
 	}
 	
 	public String getName() {

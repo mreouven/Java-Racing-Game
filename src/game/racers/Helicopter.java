@@ -13,7 +13,7 @@ public class Helicopter {
 	double currentSpeed;
 
 	public Point move(double friction) {
-		if(maxSpeed<currentSpeed+acceleration*friction)
+		if(maxSpeed>currentSpeed+acceleration*friction)
 			currentSpeed+=acceleration*friction;
 		else {
 			currentSpeed=maxSpeed;

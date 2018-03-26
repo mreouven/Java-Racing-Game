@@ -127,6 +127,7 @@ public class GameEngine {
 			while(airArena.hasActiveRacers())
 				airArena.playTurn();
 			ArrayList<Object> finished=airArena.getFinished();
+			System.out.println("Aerial Race ended!");
 			for (int i = 0; i < finished.size(); i++) {
 				System.out.println("#"+(i+1) +" "+finished.get(i));
 			}
@@ -137,6 +138,7 @@ public class GameEngine {
 			while(navalArena.hasActiveRacers())
 				navalArena.playTurn();
 			ArrayList<Object> finished=navalArena.getFinished();
+			System.out.println("Naval Race ended!");
 			for (int i = 0; i < finished.size(); i++) {
 				System.out.println("#"+(i+1) +" "+finished.get(i));
 			}
@@ -146,6 +148,7 @@ public class GameEngine {
 			while(landArena.hasActiveRacers())
 				landArena.playTurn();
 			ArrayList<Object> finished=landArena.getFinished();
+			System.out.println("Land Race ended!");
 			for (int i = 0; i < finished.size(); i++) {
 				System.out.println("#"+(i+1) +" "+finished.get(i));
 			}
