@@ -43,7 +43,7 @@ public class Airplane {
 	 * @see Point#getX()
 	 */
 	public Point move(double friction) {
-		if(maxSpeed<currentSpeed+acceleration*friction)
+		if(maxSpeed>currentSpeed+acceleration*friction)
 			currentSpeed+=acceleration*friction;
 		else {
 			currentSpeed=maxSpeed;
@@ -53,6 +53,10 @@ public class Airplane {
 
 	}
 	
+	public Point getCurrentLocation() {
+		return currentLocation;
+	}
+
 	/**
 	 * 
 	 * @param arena
@@ -64,7 +68,7 @@ public class Airplane {
 	 */
 	public void initRace(AerialArena arena, Point start, Point finish) {
 		this.arena=arena;
-		this.finish=finish;
+		this.finish=new Point(finish.getX(), finish.getY());
 		//deplace le joueur au point de departs
 		this.currentLocation.setX(start.getX());
 		
@@ -76,13 +80,13 @@ public class Airplane {
 	public Airplane(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;
-		if(maxSpeed>220) {
+		/*if(maxSpeed>220) {
 			maxSpeed=220;
-		}
+		}*/
 		this.maxSpeed = maxSpeed;
-		if(acceleration>20) {
+		/*if(acceleration>20) {
 			acceleration=20;
-		}
+		}*/
 		this.acceleration = acceleration;
 		currentLocation=new Point(0,0);
 	}
@@ -93,7 +97,7 @@ public class Airplane {
 
 	@Override
 	public String toString() {
-		return "Airplane " + name +" (" + maxSpeed + ", " + acceleration + ")";
+		return "Airplane "+ currentLocation + name +" (" + maxSpeed + ", " + acceleration + ")";
 	}
 	
 	public String getName() {

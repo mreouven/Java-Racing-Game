@@ -23,8 +23,8 @@ public class AerialArena {
 	//Constructor
 	public AerialArena(Point start, Point finish) {
 		super();
-		this.start = start;
-		this.finish = finish;
+		this.start = new Point(start.getX(), start.getY());
+		this.finish = new Point(finish.getX(), finish.getY());
 		airplanes=new ArrayList<>();
 		helicopters=new ArrayList<>();
 		finished=new ArrayList<>();
@@ -65,8 +65,9 @@ public class AerialArena {
 	}
 	
 	public void initRace() {
-		for (int i = 0; i < helicopters.size(); i++)
-			helicopters.get(i).initRace(this, start, finish);
+		for (int i = 0; i < helicopters.size(); i++) {
+			System.out.println(finish);
+			helicopters.get(i).initRace(this, start, finish);}
 		for (int i = 0; i < airplanes.size(); i++)
 			airplanes.get(i).initRace(this, start, finish);
 	}
@@ -76,8 +77,10 @@ public class AerialArena {
 	public void playTurn() {
 		if(hasActiveRacers()) {
 			Point temp=null;
+			
 			for (int i = 0; i < this.airplanes.size(); i++) {
 				temp=airplanes.get(i).move(FRICTION);	
+				//System.out.println(airplanes.get(i));
 				if(temp.getX()>=finish.getX()) {
 					crossFinishLine(airplanes.get(i));
 					airplanes.remove(i);

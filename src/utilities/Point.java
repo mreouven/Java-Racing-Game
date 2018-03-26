@@ -8,6 +8,10 @@ package utilities;
  * 
  */
 public class Point {
+	private static final int MAX_X=10000000;
+	private static final int MAX_Y=800;
+	private static final int MIN_X=0;
+	private static final int MIN_Y=0;
 	/**
 	 * The coordinate x in the class Point.
 	 * 
@@ -63,8 +67,10 @@ public class Point {
 	 * 	The coordinate x.
 	 */
 	public void setX(double x) {
-		if(x<0)
+		if(x<MIN_X)
 			x=0;
+		if(x>MAX_X)
+			x=MAX_X;
 		this.x = x;
 	}
 	
@@ -85,8 +91,14 @@ public class Point {
 	 * 	The coordinate y. 
 	 */
 	public void setY(double y) {
-		if(y<0)
+		if(y<MIN_Y)
 			y=0;
+		if(y>MAX_Y)
+			y=MAX_Y;
 		this.y = y;
+	}
+	@Override
+	public String toString() {
+		return " "+x+" "+y;
 	}
 }

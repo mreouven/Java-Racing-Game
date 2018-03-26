@@ -14,7 +14,7 @@ public class Program {
 		game.setArena(air);
 		game.addRacer(new Airplane("Bob", 220, 10));
 		game.addRacer(new Airplane("John", 175, 20));
-		game.addRacer(new Helicopter("Frank", 180, 15));
+		game.addRacer(new Airplane("Frank", 180, 15));
 		game.addRacer(new Airplane("Matt", 230, 8));
 		game.initRace();
 		game.startRace();
