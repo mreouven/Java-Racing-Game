@@ -1,11 +1,28 @@
 package game;
 
 import java.util.ArrayList;
-
 import game.arenas.*;
 import game.racers.*;
 
+/**
+ * This is the class GameEngine
+ * <p>The class is a singleton and only getInstance() can create the instance
+ * <p>This class is build by many information :</p>
+ * <ul>
+ * <li>AerialArena object</li>
+ * <li>LandArena object</li>
+ * <li>NavalArena object</li>
+ * <li>ArenaType that contains an enum of all arena</li>
+ * <li>The instance of GameEngine</li>
+ * </ul>
+ * 
+ * @author Emeth Genah
+ * @author Reouven Mimoun
+ * 
+ * 
+ */
 public class GameEngine {
+	
 	private AerialArena airArena;
 	private LandArena landArena;
 	private NavalArena navalArena;
@@ -13,7 +30,12 @@ public class GameEngine {
 	private static GameEngine instance;
 
 	//TODO constructeur de la classe GameEngine
-
+	
+	/**
+	 * This method create the instance of GameEngine
+	 * 
+	 * @return instance
+	 */
 	public static synchronized GameEngine getInstance()
 	{
 		if(instance==null)
@@ -23,6 +45,15 @@ public class GameEngine {
 		return instance;
 	}
 
+	/**
+	 * Method that set the right Arena for the instance and return a boolean
+	 * <ul>
+	 * <li>false if arena is null or there is no active arena</li>
+	 * <li>true if set the right arena for the instance</li>
+	 * 
+	 * @param arena
+	 * @return boolean
+	 */
 	public boolean setArena(Object arena) {
 		//TODO verifier que les autres doit etres null
 		if (arena==null) {
@@ -55,6 +86,16 @@ public class GameEngine {
 		}
 	}
 
+	/**
+	 * The method addRacer add an racer by parameter of type object.
+	 * <ul>
+	 * <li>if the parameter or activateArena is null</li>
+	 * <li>we pass by switch to add the racer on the proper arena</li>
+	 * 
+	 * @param newRacer
+	 * 	Type Object
+	 * @return boolean
+	 */
 	public boolean addRacer(Object newRacer) {
 
 		if(newRacer==null || this.activeAerna==null) {
@@ -101,6 +142,10 @@ public class GameEngine {
 		return false;
 	}
 
+	/**
+	 * The method initRace call initRace for the proper arena
+	 * <p>initialize by switch case</p>
+	 */
 	public void initRace() {
 		switch (this.activeAerna) {
 		case AERIALARENA:{
@@ -120,8 +165,15 @@ public class GameEngine {
 			break;
 		}
 	}
+	
+	/**
+	 * The method startRace start the game and print the racers who finish the race in order
+	 * <p>This call switch case by sending the activateArena of the instance</p>
+	 * <p>By case in a loop, playTurn is call until hasActivateRacer is return true</p>
+	 * <p>then print the finisher</p>
+	 * 
+	 */
 	public void startRace() {
-
 		switch (this.activeAerna) {
 		case AERIALARENA:{
 			while(airArena.hasActiveRacers())
@@ -155,10 +207,7 @@ public class GameEngine {
 			System.out.println("error active type");
 			break;
 		}
-
 	}
-
-
 }
 
 
