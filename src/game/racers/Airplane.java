@@ -77,6 +77,22 @@ public class Airplane {
 
 
 	//TODO verifier valeur correct
+	/**
+	 * 
+	 * @param name
+	 * 	The name of the racer.
+	 * @param maxSpeed
+	 * 	The maximum speed of the racer.
+	 * @param acceleration
+	 * 	The acceleration of the racer.
+	 * 
+	 * @see Airplane#setName(String)
+	 * @see Airplane#getName()
+	 * @see Airplane#setMaxSpeed(double)
+	 * @see Airplane#getMaxSpeed()
+	 * @see Airplane#setAcceleration(double)
+	 * @see Airplane#getAcceleration()
+	 */
 	public Airplane(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;
@@ -114,17 +130,27 @@ public class Airplane {
 		return maxSpeed;
 	}
 
-
+	/**
+	 * 
+	 * @param maxSpeed
+	 */
 	public void setMaxSpeed(double maxSpeed) {
 		this.maxSpeed = maxSpeed;
 	}
 
-
+	/**
+	 * 
+	 * @return acceleration
+	 * 	The acceleration of the instance.
+	 */
 	public double getAcceleration() {
 		return acceleration;
 	}
 
-
+	/**
+	 * 
+	 * @param acceleration
+	 */
 	public void setAcceleration(double acceleration) {
 		this.acceleration = acceleration;
 	}

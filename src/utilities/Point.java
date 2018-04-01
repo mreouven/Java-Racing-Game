@@ -1,6 +1,12 @@
 package utilities;
 
 /**
+ * This is the class Point
+ * <p>This class is build by many information :</p>
+ * <ul>
+ * <li>The coordinate x</li>
+ * <li>The coordinate y</li>
+ * </ul>
  * 
  * @author Emeth Genah
  * @author Reouven Mimoun

@@ -8,10 +8,8 @@ import utilities.Point;
 
 public class AerialArena {
 	
-	
 	private Point start;
 	private Point finish;
-	
 	private ArrayList<Airplane> airplanes;
 	private ArrayList<Helicopter> helicopters;
 	private ArrayList<Object> finished;
@@ -21,6 +19,15 @@ public class AerialArena {
 	private final static int MAX_RACERS = 6;
 	
 	//Constructor
+	/**
+	 * This is the constructor of the AerialArena
+	 * <p>initiate all the arrayList</p>
+	 * 
+	 * @param start
+	 * 	the start point of the race
+	 * @param finish
+	 * 	the finish point of the race
+	 */
 	public AerialArena(Point start, Point finish) {
 		super();
 		this.start = new Point(start.getX(), start.getY());
@@ -30,6 +37,16 @@ public class AerialArena {
 		finished=new ArrayList<>();
 	}
 
+	/**
+	 * The method add an Airplane and check that the number of racer is inferior of MAX_RACERS
+	 * <ul>
+	 * <li>return true if add a racer</li>
+	 * <li>return false if not</li>
+	 * </ul>
+	 * 
+	 * @param newRacer
+	 * @return boolean
+	 */
 	public boolean addAirplane(Airplane newRacer) {
 		if((airplanes.size()+ helicopters.size())<MAX_RACERS){
 			if(newRacer != null) {
@@ -40,6 +57,11 @@ public class AerialArena {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @return finished
+	 * 
+	 */
 	public ArrayList<Object> getFinished() {
 		return finished;
 	}
