@@ -34,13 +34,13 @@ public class Car {
 	public Car(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;
-		if(maxSpeed>120) {
-			maxSpeed=120;
-		}
+		/*if(maxSpeed>220) {
+			maxSpeed=220;
+		}*/
 		this.maxSpeed = maxSpeed;
-		if(acceleration>12) {
-			acceleration=12;
-		}
+		/*if(acceleration>20) {
+			acceleration=20;
+		}*/
 		this.acceleration = acceleration;
 		currentLocation=new Point(0,0);
 	}

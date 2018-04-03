@@ -34,16 +34,15 @@ public class RowBoat {
 
 
 	public RowBoat(String name, double maxSpeed, double acceleration) {
-		//TODO verifier l'acceleration max
 		super();
 		this.name = name;
-		if(maxSpeed>75) {
-			maxSpeed=75;
-		}
+		/*if(maxSpeed>220) {
+			maxSpeed=220;
+		}*/
 		this.maxSpeed = maxSpeed;
-		if(acceleration>10) {
-			acceleration=10;
-		}
+		/*if(acceleration>20) {
+			acceleration=20;
+		}*/
 		this.acceleration = acceleration;
 		currentLocation=new Point(0,0);
 	}

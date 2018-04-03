@@ -48,6 +48,9 @@ public class LandArena {
 		super();
 		this.start = start;
 		this.finish = finish;
+		cars=new ArrayList<>();
+		horses=new ArrayList<>();
+		finished=new ArrayList<>();
 	}
 
 	public ArrayList<Object> getFinished() {
@@ -76,12 +79,12 @@ public class LandArena {
 	
 	public int crossFinishLine(Horse racer) {
 		finished.add(racer);
-		return (finished.indexOf(racer) + 1);
+		return  (finished.size());
 	}
 	
 	public int crossFinishLine(Car racer) {
 		finished.add(racer);
-		return (finished.indexOf(racer) + 1);
+		return  (finished.size());
 	}
 	
 	public void initRace() {

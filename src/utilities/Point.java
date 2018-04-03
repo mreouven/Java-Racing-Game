@@ -1,5 +1,7 @@
 package utilities;
 
+import game.racers.SpeedBoat;
+
 /**
  * This is the class Point
  * <p>This class is build by many information :</p>
@@ -44,6 +46,31 @@ public class Point {
 	 * @param y
 	 * The coordinate y.
 	 * 
+	 * @see NavalArena#addSpeedBoat(SpeedBoat)
+	 * @see Point#getX()
+	 * @see Point#setX(double)
+	 * @see Point#getY()
+	 * @see Point#setY(double)
+	 * 
+	 */
+	public Point(Point p) {
+		/**
+		 * Constructs and initializes a point with the same location as the specified Point object.
+		 * @param p
+		 * 	the point object to be copied
+		 */
+		x=p.x;
+		y=p.y;
+	}
+	/**
+	 * The constructor Point.
+	 * 
+	 * @param x
+	 * The coordinate x.
+	 * @param y
+	 * The coordinate y.
+	 * 
+	 * @see NavalArena#addSpeedBoat(SpeedBoat)
 	 * @see Point#getX()
 	 * @see Point#setX(double)
 	 * @see Point#getY()
@@ -55,7 +82,6 @@ public class Point {
 		this.setY(y);
 		
 	}
-	//TODO verifier que les entree sont correct
 	/**
 	 * The getter of the coordinate x.
 	 * 
@@ -72,12 +98,13 @@ public class Point {
 	 * @param x
 	 * 	The coordinate x.
 	 */
-	public void setX(double x) {
+	public boolean setX(double x) {
 		if(x<MIN_X)
-			x=0;
+			return false;
 		if(x>MAX_X)
-			x=MAX_X;
+			return false;
 		this.x = x;
+		return true;
 	}
 	
 	/**
@@ -96,15 +123,16 @@ public class Point {
 	 * @param y
 	 * 	The coordinate y. 
 	 */
-	public void setY(double y) {
+	public boolean setY(double y) {
 		if(y<MIN_Y)
-			y=0;
+			return false;
 		if(y>MAX_Y)
-			y=MAX_Y;
+			return false;
 		this.y = y;
+		return true;
 	}
 	@Override
 	public String toString() {
-		return " "+x+" "+y;
+		return "("+x+","+y+")";
 	}
 }

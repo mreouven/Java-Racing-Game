@@ -36,14 +36,13 @@ public class SpeedBoat {
 	public SpeedBoat(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;
-		this.name = name;
-		if(maxSpeed>170) {
-			maxSpeed=170;
-		}
+		/*if(maxSpeed>220) {
+			maxSpeed=220;
+		}*/
 		this.maxSpeed = maxSpeed;
-		if(acceleration>5) {
-			acceleration=5;
-		}
+		/*if(acceleration>20) {
+			acceleration=20;
+		}*/
 		this.acceleration = acceleration;
 		currentLocation=new Point(0,0);
 	}

@@ -35,14 +35,13 @@ public class Helicopter {
 	public Helicopter(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;
-		this.name = name;
-		if(maxSpeed>150) {
-			maxSpeed=150;
-		}
+		/*if(maxSpeed>220) {
+			maxSpeed=220;
+		}*/
 		this.maxSpeed = maxSpeed;
-		if(acceleration>10) {
-			acceleration=10;
-		}
+		/*if(acceleration>20) {
+			acceleration=20;
+		}*/
 		this.acceleration = acceleration;
 		currentLocation=new Point(0,0);
 	}

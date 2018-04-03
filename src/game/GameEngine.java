@@ -211,6 +211,14 @@ public class GameEngine {
 			break;
 		}
 	}
+
+	public ArenaType getArenaType() {
+		return activeAerna;
+	}
+
+	public void setActiveAerna(ArenaType activeAerna) {
+		this.activeAerna = activeAerna;
+	}
 }
 
 

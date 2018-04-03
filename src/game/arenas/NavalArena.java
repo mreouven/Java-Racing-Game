@@ -51,6 +51,9 @@ public class NavalArena {
 		super();
 		this.start = start;
 		this.finish = finish;
+		rowBoats=new ArrayList<>();
+		speedBoats=new ArrayList<>();
+		finished=new ArrayList<>();
 	}
 
 	public boolean addSpeedBoat(SpeedBoat newRacer) {

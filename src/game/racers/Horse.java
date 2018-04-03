@@ -36,14 +36,13 @@ public class Horse {
 	public Horse(String name, double maxSpeed, double acceleration) {
 		super();
 		this.name = name;
-		this.name = name;
-		if(maxSpeed>80) {
-			maxSpeed=80;
-		}
+		/*if(maxSpeed>220) {
+			maxSpeed=220;
+		}*/
 		this.maxSpeed = maxSpeed;
-		if(acceleration>7) {
-			acceleration=7;
-		}
+		/*if(acceleration>20) {
+			acceleration=20;
+		}*/
 		this.acceleration = acceleration;
 		currentLocation=new Point(0,0);
 	}

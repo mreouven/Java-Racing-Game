@@ -78,17 +78,16 @@ public class AerialArena {
 	
 	public int crossFinishLine(Airplane racer) {
 		finished.add(racer);
-		return (finished.indexOf(racer) + 1);
+		return (finished.size());
 	}
 	
 	public int crossFinishLine(Helicopter racer) {
 		finished.add(racer);
-		return (finished.indexOf(racer) + 1);
+		return (finished.size());
 	}
 	
 	public void initRace() {
 		for (int i = 0; i < helicopters.size(); i++) {
-			System.out.println(finish);
 			helicopters.get(i).initRace(this, start, finish);}
 		for (int i = 0; i < airplanes.size(); i++)
 			airplanes.get(i).initRace(this, start, finish);
@@ -102,7 +101,6 @@ public class AerialArena {
 			
 			for (int i = 0; i < this.airplanes.size(); i++) {
 				temp=airplanes.get(i).move(FRICTION);	
-				//System.out.println(airplanes.get(i));
 				if(temp.getX()>=finish.getX()) {
 					crossFinishLine(airplanes.get(i));
 					airplanes.remove(i);
@@ -123,6 +121,11 @@ public class AerialArena {
 			return true;
 		return false;
 
+	}
+
+	public Point getFinish() {
+		
+		return finish;
 	}
 	
 }
